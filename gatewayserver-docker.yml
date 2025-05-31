@@ -1,11 +1,10 @@
-server:
-  port: 8072
+spring:
+  data:
+    redis:
+      host: redis
+      port: 6379
 
 eureka:
-  instance:
-    preferIpAddress: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
+    service-url:
       defaultZone: "http://eurekaserver:8070/eureka/"
