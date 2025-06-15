@@ -1,15 +1,17 @@
 server:
-  port: 8761
+  port: 8072
 
 spring:
+  application:
+    name: gatewayserver
   config:
     import: "optional:configserver:http://configserver:8071/"
 
 eureka:
-  instance:
-    hostname: eurekaserver
   client:
-    fetchRegistry: false
-    registerWithEureka: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://eurekaserver:8761/eureka/
+  instance:
+    preferIpAddress: true
