@@ -1,12 +1,15 @@
 server:
-  port: 8072
+  port: 8761
+
+spring:
+  config:
+    import: "optional:configserver:http://configserver:8071/"
 
 eureka:
+  instance:
+    hostname: eurekaserver
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    fetchRegistry: false
+    registerWithEureka: false
     serviceUrl:
       defaultZone: http://eurekaserver:8761/eureka/
-
-  instance:
-    preferIpAddress: true
