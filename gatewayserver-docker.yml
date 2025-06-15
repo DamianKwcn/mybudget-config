@@ -1,3 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+  cloud:
+    config:
+      override-none: true
+      
 server:
   port: 8072
 
